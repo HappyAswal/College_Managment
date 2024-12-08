@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu -->
+        <div id="mainMenu" class="menu">
+            <h1>Student Management</h1>
+            <div class="button-group">
+                <button onclick="showPanel('addData')">Add Data</button>
+                <button onclick="showPanel('fetchData')">Fetch Data</button>
+            </div>
+        </div>
+
+        <!-- Add Data Panel -->
+        <div id="addData" class="panel hidden">
+            <h2>Add Student Data</h2>
+            <form id="addDataForm">
+                <label for="tableSelectAdd">Table:</label>
+                <select id="tableSelectAdd">
+                    <option value="BTAIML">BTAIML</option>
+                    <option value="BTDS">BTDS</option>
+                    <option value="BTCYBERS">BTCYBERS</option>
+                </select>
+
+                <label for="sNo">S_no:</label>
+                <input type="number" id="sNo" required>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="admissionNo">Admission No:</label>
+                <input type="text" id="admissionNo" required>
+
+                <label for="enrollmentNo">Enrollment No:</label>
+                <input type="number" id="enrollmentNo" required>
+
+                <label for="mobileNo">Mobile No:</label>
+                <input type="tel" id="mobileNo" required>
+
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" required>
+
+                <label for="dob">DOB:</label>
+                <input type="date" id="dob" required>
+
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="showPanel('mainMenu')">Back</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Fetch Data Panel -->
+        <div id="fetchData" class="panel hidden">
+            <h2>Fetch Student Data</h2>
+            <div class="fetch-controls">
+                <label for="tableSelectFetch">Select Table:</label>
+                <select id="tableSelectFetch">
+                    <option value="BTAIML">BTAIML</option>
+                    <option value="BTDS">BTDS</option>
+                    <option value="BTCYBERS">BTCYBERS</option>
+                </select>
+                <button onclick="fetchData()">Fetch</button>
+            </div>
+            <div id="dataTable" class="data-table"></div>
+            <div class="button-group">
+                <button onclick="showPanel('mainMenu')">Back</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

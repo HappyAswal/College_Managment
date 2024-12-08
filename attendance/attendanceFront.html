@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Menu -->
+    <div id="mainMenu" class="center">
+        <h1>Attendance System</h1>
+        <p>Welcome to Attendance System</p>
+        <button onclick="showSection('adminLogin')">Admin</button>
+        <button onclick="showSection('studentPanel')">Student</button>
+    </div>
+
+    <!-- Admin Login -->
+    <div id="adminLogin" class="hidden center">
+        <h1>Admin Login</h1>
+        <label for="adminPassword">Enter Admin Password:</label>
+        <input type="password" id="adminPassword" placeholder="Password">
+        <button onclick="validateAdmin()">Login</button>
+        <button onclick="showSection('mainMenu')">Back</button>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="hidden center">
+        <h1>Admin Panel</h1>
+        <p>Select Department to Mark Attendance:</p>
+        <button onclick="showSection('markAttendance')">BTAIML</button>
+        <button onclick="showSection('markAttendance')">BTDS</button>
+        <button onclick="showSection('markAttendance')">BTCYBERS</button>
+        <button onclick="showSection('mainMenu')">Back</button>
+    </div>
+
+    <!-- Mark Attendance -->
+    <div id="markAttendance" class="hidden center">
+        <h1>Mark Attendance</h1>
+        <p>Mark Attendance for Each Student:</p>
+        <div id="studentList">
+            <div class="student">
+                <label>Student 1</label>
+                <select>
+                    <option>Present</option>
+                    <option>Absent</option>
+                </select>
+            </div>
+            <div class="student">
+                <label>Student 2</label>
+                <select>
+                    <option>Present</option>
+                    <option>Absent</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="submitAttendance()">Submit Attendance</button>
+        <button onclick="showSection('mainMenu')">Back</button>
+    </div>
+
+    <!-- Student Panel -->
+    <div id="studentPanel" class="hidden center">
+        <h1>Student Panel</h1>
+        <label for="studentId">Enter your admission number:</label>
+        <input type="text" id="studentId" placeholder="Admission Number">
+        <button onclick="checkAttendance()">Check Attendance</button>
+        <button onclick="showSection('mainMenu')">Back</button>
+    </div>
+
+    <!-- Message Display -->
+    <div id="message" class="hidden center">
+        <p id="messageText"></p>
+        <button onclick="showSection('mainMenu')">Back to Main Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

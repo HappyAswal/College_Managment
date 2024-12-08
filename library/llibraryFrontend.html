@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Library Management System</h1>
+        </header>
+        <main>
+            <form id="library-form" class="input-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="admission">Admission Number:</label>
+                    <input type="text" id="admission" name="admission" placeholder="Enter your admission number">
+                </div>
+                <div class="form-group">
+                    <label for="section">Section:</label>
+                    <select id="section" name="section">
+                        <option value="BTAIML">BTAIML</option>
+                        <option value="BTDS">BTDS</option>
+                        <option value="BTCYBERS">BTCYBERS</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="book">Book Name:</label>
+                    <input type="text" id="book" name="book" placeholder="Enter the book name">
+                </div>
+                <div class="form-group buttons">
+                    <button type="button" id="borrow-button">Borrow Book</button>
+                    <button type="button" id="return-button">Return Book</button>
+                </div>
+            </form>
+            <div class="actions">
+                <button type="button" id="show-books-button">Show Available Books</button>
+                <button type="button" id="update-books-button">Update Books</button>
+            </div>
+            <textarea id="book-list" readonly placeholder="Available books will be displayed here"></textarea>
+            <p id="message" class="message"></p>
+        </main>
+    </div>
+</body>
+</html>
